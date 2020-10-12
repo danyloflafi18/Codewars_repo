@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9417beac-5c5f-4ca3-8ad1-4302a858f320" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Codewars_repo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Codewars_repo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +159,7 @@
       <workItem from="1602252615040" duration="70000" />
       <workItem from="1602252734339" duration="59000" />
       <workItem from="1602252795586" duration="2114000" />
-      <workItem from="1602497465916" duration="1418000" />
+      <workItem from="1602497465916" duration="1750000" />
     </task>
     <servers />
   </component>

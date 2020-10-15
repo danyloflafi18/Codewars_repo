@@ -4,12 +4,11 @@ When('I click on sign in') do
 end
 
 And('I click on sign in with IMDb button') do
-  @sign_in_page = SignInPage.new
-  @sign_in_page.click_on_sign_in_imdb
+  @sign_in_with_imdb_page = SignInWithImdbPage.new
+  @sign_in_with_imdb_page.click_on_sign_in_with_IMDb_button
 end
 
 And(/^I click on email field and type email (.*)$/) do |email|
-  @sign_in_with_imdb_page = SignInWithImdbPage.new
   @sign_in_with_imdb_page.click_on_email_field
   @sign_in_with_imdb_page.type_into_email_field(email)
 end

@@ -124,6 +124,7 @@ DEPENDENCIES
   require_all
   rspec
   selenium-webdriver
+  thor
 
 BUNDLED WITH
    2.1.4

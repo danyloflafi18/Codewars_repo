@@ -18,16 +18,19 @@ RUN apt-get update \
   libx11-xcb1 \
   libxss1 \
   lsb-release \
+  unzip \
   xdg-utils \
   libxcomposite1 -y
 # Скачується chrome браузер
-RUN curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-# Встановлюється пакет для оболонки Debian
-RUN dpkg -i google-chrome.deb
-# Встановлюються якісь налаштування
-RUN sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
-# Видаляється пакет
-RUN rm google-chrome.deb
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+  && dpkg -i google-chrome*.deb \
+  && apt install -f
+#chromedriver
+RUN wget https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip \
+  && unzip chromedriver_linux64.zip \
+  && chmod +x chromedriver
+RUN mv -f chromedriver /usr/bin/google-chrome
+ENV CHROME=/usr/bin/google-chrome/
 # Створюються дві директорії
 RUN mkdir /usr/src/app
 RUN mkdir /usr/src/app/output
@@ -37,5 +40,7 @@ WORKDIR /usr/src/app
 ADD . .
 # Встановлення gem
 RUN bundle install
+RUN Xvfb :99 -ac -screen 0 1280x1024x24 &
+RUN export DISPLAY=:99
 # Які команди будуть доступні коли ранитиметься контейнер
 CMD ["cucumber", "--require", "features", "--format", "pretty", "--format", "html", "--out", "output/report.html"]

@@ -57,3 +57,5 @@ build-iPhoneSimulator/
 # file: ~/.gitignore_global
 .DS_Store
 .idea
+Gemfile.lock
+debug.log

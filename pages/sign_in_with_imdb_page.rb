@@ -27,7 +27,7 @@ class SignInWithImdbPage
   end
 
   def click_on_sign_in_button
-    sign_in_xpath = "//div[3]/span/span/input"
+    sign_in_xpath = "//*[@id=\"signInSubmit\"]"
     page.find(:xpath, sign_in_xpath).click
   end
 

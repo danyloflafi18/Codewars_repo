@@ -32,7 +32,7 @@ class SignInWithImdbPage
   end
 
   def contain_error_message
-    import_message = "There was a problem"
+    import_message = "Important Message!"
     assert_text import_message
   end
 end

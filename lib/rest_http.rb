@@ -14,7 +14,7 @@ class RestHttp
 
   def put_request(endpoint, payload, headers = {content_type: 'application/json'})
     RestClient.put(URL + endpoint, payload, headers)
-    end
+  end
 
   def delete_request(endpoint, headers = {content_type: 'application/json'})
     RestClient.delete(URL + endpoint, headers)

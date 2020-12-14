@@ -1,1 +1,4 @@
 --require spec_helper
+
+username: ENV['LT_USERNAME'],
+accessKey: ENV['LT_ACCESS_KEY']

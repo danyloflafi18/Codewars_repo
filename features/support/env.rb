@@ -6,7 +6,7 @@ require 'require_all'
 
 require_relative '../../pages/all_pages'
 
-Selenium::WebDriver::Chrome::Service.driver_path="/usr/bin/google-chrome"
+Selenium::WebDriver::Chrome::Service.driver_path="chromedriver.exe"
 
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_argument('--headless')
@@ -14,8 +14,6 @@ options.add_argument('--disable-gpu')
 options.add_argument('window-size=1024,768')
 options.add_argument('--no-sandbox')
 options.add_argument('disable-dev-shm-usage')
-options = Selenium::WebDriver::Chrome::Options.new
-options.add_argument('--headless')
 Selenium::WebDriver.for :chrome, options: options
 
 # Chrome non-headless driver

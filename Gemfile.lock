@@ -79,6 +79,9 @@ GEM
     netrc (0.11.0)
     nokogiri (1.10.10-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    parallel (1.20.1)
+    parallel_tests (3.4.0)
+      parallel
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
@@ -137,6 +140,7 @@ DEPENDENCIES
   capybara
   chromedriver-helper
   cucumber
+  parallel_tests
   pry
   rake
   require_all

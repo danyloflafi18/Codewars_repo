@@ -11,6 +11,12 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
+    atlassian-jwt (0.2.0)
+      jwt (~> 2.1.0)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     builder (3.2.4)
     capybara (3.33.0)
       addressable
@@ -25,6 +31,8 @@ GEM
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coderay (1.1.3)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.1.7)
     cucumber (5.1.2)
       builder (~> 3.2, >= 3.2.4)
@@ -57,16 +65,30 @@ GEM
       cucumber-core (~> 8.0, >= 8.0.1)
       cucumber-cucumber-expressions (~> 10.3, >= 10.3.0)
       cucumber-messages (~> 13.0, >= 13.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    equalizer (0.0.11)
+    faraday (1.1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
     ffi (1.13.1-x64-mingw32)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    ice_nine (0.11.2)
+    inflecto (0.0.2)
     io-like (0.3.1)
+    jira-ruby (2.1.3)
+      activesupport
+      atlassian-jwt
+      multipart-post
+      oauth (~> 0.5, >= 0.5.0)
+    jwt (2.1.0)
     method_source (1.0.0)
     middleware (0.1.0)
     mime-types (3.3.1)
@@ -76,9 +98,11 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.2)
     multi_test (0.1.2)
+    multipart-post (2.1.1)
     netrc (0.11.0)
     nokogiri (1.10.10-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    oauth (0.5.4)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
@@ -113,12 +137,17 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    ruby2_keywords (0.0.2)
     rubyzip (2.3.0)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     sys-uname (1.2.1)
       ffi (>= 1.0.0)
+    telegram-bot-ruby (0.14.0)
+      faraday
+      inflecto
+      virtus
     thor (1.0.1)
     thread_safe (0.3.6)
     tzinfo (1.2.7)
@@ -126,6 +155,11 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7-x64-mingw32)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.0)
@@ -134,15 +168,18 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  atlassian-jwt
   capybara
   chromedriver-helper
   cucumber
+  jira-ruby
   pry
   rake
   require_all
   rest-client
   rspec
   selenium-webdriver
+  telegram-bot-ruby
 
 BUNDLED WITH
    2.1.4

@@ -6,7 +6,7 @@ require 'require_all'
 
 require_relative '../../pages/all_pages'
 
-Selenium::WebDriver::Chrome::Service.driver_path="/usr/bin/google-chrome"
+Selenium::WebDriver::Chrome::Service.driver_path="C:/Users/dchaly/AppData/Local/Google/Chrome/Application/chromedriver.exe"
 
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_argument('--headless')
@@ -42,5 +42,5 @@ else
 end
 
 Before do
-  Capybara.current_driver = :headless_chrome
+  Capybara.current_driver = :selenium
 end

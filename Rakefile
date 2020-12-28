@@ -1,11 +1,16 @@
-desc 'Ring the bell'
-task :ring do
-  puts "Bell is ringing."
-end
+task :ring
+task :cucumber_test_top_250
+task :run_bot => :cucumber_test_top_250
+
 
 desc 'Enter home'
 task :enter => :ring do
   puts "Entering home!"
+end
+
+desc 'Exit home'
+task :exitw => :enter do
+  puts "Exiting home!"
 end
 
 desc 'Exit home'

@@ -1,0 +1,18 @@
+Using the cucumber_test_top_250 profile...
+Feature: Search top film of the 250
+
+  Background:            # features/tests/top_250.feature:3
+    Given Go to the page # features/step_definitions/common_steps.rb:1
+
+  @top_250
+  Scenario:                                                   # features/tests/top_250.feature:7
+    When I click on drop-down menu                            # features/step_definitions/top_250_steps.rb:1
+    And I click on advance search item                        # features/step_definitions/top_250_steps.rb:6
+    And I click on advance title search                       # features/step_definitions/top_250_steps.rb:10
+    And I click on 250 top check button                       # features/step_definitions/top_250_steps.rb:15
+    And I click on search button                              # features/step_definitions/top_250_steps.rb:20
+    Then I should see the first rated movie and click on this # features/step_definitions/top_250_steps.rb:24
+
+1 scenario (1 passed)
+7 steps (7 passed)
+0m20.606s

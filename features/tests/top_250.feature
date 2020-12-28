@@ -3,6 +3,7 @@ Feature: Search top film of the 250
   Background:
     Given Go to the page
 
+    @top_250
     Scenario:
       When I click on drop-down menu
       And I click on advance search item
